@@ -1,0 +1,95 @@
+$date
+     Apr 03, 2020       17:44:28
+$end
+
+$version
+ SystemC 2.3.3-Accellera --- Feb 14 2020 17:04:42
+$end
+
+$timescale
+     1 ps
+$end
+
+$scope module SystemC $end
+$var wire    1  aaaaa  CLK       $end
+$var wire    1  aaaab  P_trigger_R1       $end
+$var wire    1  aaaac  P_trigger_R2       $end
+$var wire    1  aaaad  S_trigger_R1       $end
+$var wire    1  aaaae  S_trigger_R2       $end
+$var wire   32  aaaaf  PdataToRobot1 [31:0]  $end
+$var wire   32  aaaag  PdataToRobot2 [31:0]  $end
+$var wire   32  aaaah  SdataToRobot1 [31:0]  $end
+$var wire   32  aaaai  SdataToRobot2 [31:0]  $end
+$var wire    1  aaaaj  triggerFromR1ToServer       $end
+$var wire    1  aaaak  triggerFromR1ToProcessing       $end
+$var wire    1  aaaal  triggerFromR2ToServer       $end
+$var wire    1  aaaam  triggerFromR2ToProcessing       $end
+$var wire   32  aaaan  dataFromR1ToProcessing [31:0]  $end
+$var wire   32  aaaao  dataFromR1ToServer [31:0]  $end
+$var wire   32  aaaap  dataFromR2ToProcessing [31:0]  $end
+$var wire   32  aaaaq  dataFromR2ToServer [31:0]  $end
+$upscope $end
+$enddefinitions  $end
+
+$comment
+All initial values are dumped below at time 0 sec = 0 timescale units.
+$end
+
+$dumpvars
+0aaaaa
+1aaaab
+0aaaac
+0aaaad
+1aaaae
+b1 aaaaf
+b0 aaaag
+b0 aaaah
+b11111111111111111111111111111111 aaaai
+1aaaaj
+1aaaak
+1aaaal
+1aaaam
+b0 aaaan
+b0 aaaao
+b0 aaaap
+b0 aaaaq
+$end
+
+#2000000000
+0aaaab
+1aaaac
+1aaaad
+0aaaae
+b1 aaaag
+b1 aaaah
+0aaaaj
+0aaaak
+0aaaal
+0aaaam
+
+#4000000000
+0aaaac
+0aaaad
+
+#5000000000
+1aaaaa
+
+#10000000000
+0aaaaa
+
+#15000000000
+1aaaaa
+
+#20000000000
+0aaaaa
+
+#25000000000
+1aaaaa
+
+#30000000000
+0aaaaa
+
+#35000000000
+1aaaaa
+
+#40000000000

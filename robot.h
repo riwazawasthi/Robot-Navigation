@@ -1,7 +1,7 @@
 #ifndef ROBOT_H
 #define ROBOT_H
 
-#include<systemc.h>
+#include"systemc.h"
 
 class robotModule : public sc_module {
 	public:
@@ -11,7 +11,7 @@ class robotModule : public sc_module {
 
 		// Outputs
 		sc_out<int> dataToServer , dataToProcessing;
-    sc_out<bool> triggerToServer;
+    sc_out<bool> triggerToServer, triggerToProcessing;
 
 		SC_HAS_PROCESS(robotModule);
 		robotModule(sc_module_name name , int robotId) : sc_module(name) {
@@ -28,21 +28,9 @@ class robotModule : public sc_module {
 	private:
 		int id;
 
-		void relayToServer () {
-			dataToServer.write(dataFromProcessing.read());
-      triggerToServer.write(1);
-      wait(10, SC_NS);
-      triggerToServer.write(0);
-
-		}
-
-		void relayToProcessing () {
-			dataToProcessing.write(dataFromServer.read());
-		}
-
-		void robotProcess () {
-			//something for phase 2
-		}
+		void relayToServer ();
+		void relayToProcessing ();
+		void robotProcess ();
 };
 
 #endif
